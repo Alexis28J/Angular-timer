@@ -1,3 +1,5 @@
+//Spiegazione Copilot (03.02.2026) - https://copilot.microsoft.com/shares/r5f8zPCHaNNzvU2RA2Nm3
+
 import { computed, inject, Injectable, signal, WritableSignal } from '@angular/core';
 
 @Injectable({
@@ -21,10 +23,33 @@ export class ClockService {
     return secondsleft;
   })
 
-  constructor() {
-    setInterval(() => {
 
-      this.time.set(new Date());
+//   formattedTime = computed(() =>
+//   this.time().toLocaleTimeString('it-IT', {
+//     hour: '2-digit',
+//     minute: '2-digit',
+//     second: '2-digit'
+//   })
+// );
+
+formattedTime = computed(() => {
+  const d = this.time();
+  return d.toLocaleDateString('it-IT', {
+    // weekday: 'long',
+    day: '2-digit',
+    month: 'short',   //long = febbraio, short = feb
+    year: 'numeric'
+  }) + '  -  ' + d.toLocaleTimeString('it-IT', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+});
+
+  constructor() {
+    setInterval(() => {    
+
+      this.time.set(new Date()); 
 
       //metodo senza usare set - è più lungo e macchinoso - non consigliato
       // this.time.update(oldTime => {
@@ -35,5 +60,6 @@ export class ClockService {
       // });
 
     }, 1000);
+    
   }
 }
