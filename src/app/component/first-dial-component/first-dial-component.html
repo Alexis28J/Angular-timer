@@ -1,0 +1,12 @@
+<div class="dial-container">
+<div>
+    <strong>A domani</strong>
+<p>{{currentTime.secondsToMidnight() + ' secondi'}}</p>
+</div>
+
+<div>
+    <button (click)="timeInSeconds()">Secondi</button>
+    <button (click)="timeInMinutes()">Minuti</button>
+    <button (click)="timeInHours()">Ore</button>
+</div>
+</div>

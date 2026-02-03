@@ -24,6 +24,7 @@ export class ClockService {
   })
 
 
+
 //   formattedTime = computed(() =>
 //   this.time().toLocaleTimeString('it-IT', {
 //     hour: '2-digit',
@@ -33,13 +34,13 @@ export class ClockService {
 // );
 
 formattedTime = computed(() => {
-  const d = this.time();
-  return d.toLocaleDateString('it-IT', {
+  const clock = this.time();
+  return clock.toLocaleDateString('it-IT', {
     // weekday: 'long',
     day: '2-digit',
     month: 'short',   //long = febbraio, short = feb
     year: 'numeric'
-  }) + '  -  ' + d.toLocaleTimeString('it-IT', {
+  }) + '  -  ' + clock.toLocaleTimeString('it-IT', {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit'

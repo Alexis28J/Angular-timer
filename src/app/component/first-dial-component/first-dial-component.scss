@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+}
+
+.dial-container{
+    border: 1px solid rgb(214, 7, 7);
+    background-color: rgb(172, 171, 171);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
