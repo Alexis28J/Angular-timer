@@ -16,14 +16,12 @@ export class FirstDialComponent {
 timeInSeconds() {
 console.log('Secondi');
 return this.currentTime.secondsToMidnight();
-
 }
 
 timeInMinutes() {
 console.log('Minuti');
-//console.log(this.currentTime.minutesToMidnight());
+console.log(this.currentTime.minutesToMidnight());
 return this.currentTime.minutesToMidnight();
-;
 }
 
 timeInHours() {
