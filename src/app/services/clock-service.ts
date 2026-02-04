@@ -65,19 +65,33 @@ export class ClockService {
   //   })
   // );
 
-  formattedTime = computed(() => {
+  // formattedTime = computed(() => {
+  //   const clock = this.time();
+  //   return clock.toLocaleDateString('it-IT', {
+  //     // weekday: 'long',
+  //     day: '2-digit',
+  //     month: 'short',   //long = febbraio, short = feb
+  //     year: 'numeric'
+  //   }) + '  -  ' + clock.toLocaleTimeString('it-IT', {
+  //     hour: '2-digit',
+  //     minute: '2-digit',
+  //     second: '2-digit'
+  //   });
+  // });
+
+    formattedTime = computed(() => {
     const clock = this.time();
     return clock.toLocaleDateString('it-IT', {
       // weekday: 'long',
       day: '2-digit',
       month: 'short',   //long = febbraio, short = feb
-      year: 'numeric'
-    }) + '  -  ' + clock.toLocaleTimeString('it-IT', {
+      year: 'numeric',
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit'
-    });
+    }).replace(',', ' - ')
   });
+
 
   constructor() {
     setInterval(() => {
